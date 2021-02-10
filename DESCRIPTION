@@ -1,0 +1,19 @@
+Package: bpCausal
+Type: Package
+Title: Bayesian Causal Inference with TSCS Data
+Version: 0.0.1
+Date: 2021-02-09
+Author: Licheng Liu; Xun Pang; Yiqing Xu
+Maintainer: Licheng Liu
+      <liulch@mit.edu>
+Description: The package provides functions for estimating and 
+      making inference of treatment effects from time-series 
+      cross-sectional data with the Bayesian dynamic multilevel 
+      latent factor models.
+NeedsCompilation: yes
+License: GPL-2
+Imports: Rcpp (>= 1.0.4.6)
+SystemRequirements: A C++11 compiler.
+Depends: R (>= 3.5.0)
+LinkingTo: Rcpp, RcppArmadillo
+RoxygenNote: 6.0.1
