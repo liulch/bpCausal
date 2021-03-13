@@ -2,7 +2,7 @@
 \alias{bpCausal}
 \title{Bayesian Causal inference with TSCS data}
 \description{Bayesian Causal inference with TSCS data}
-\usage{pblasso(data, index, Yname, Dname, Xname, Zname, Aname, 
+\usage{bpCausal(data, index, Yname, Dname, Xname, Zname, Aname, 
                re = "unit", ar1 = TRUE, r, 
                niter = 10000, burn = 5000,
                xlasso, zlasso, alasso, flasso,
@@ -88,7 +88,7 @@
 \examples{
 library(bpCausal)
 data(bpCausal)
-out <- pblasso(data = simdata, index = c("id", "time"), 
+out <- bpCausal(data = simdata, index = c("id", "time"), 
                Yname = "Y", Dname = "D", 
                Xname = c("X1", "X2"), Zname = NULL, Aname = c("X1", "X2"), 
                re = "time", r = 10, niter = 20000)

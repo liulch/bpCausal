@@ -28,7 +28,7 @@ Maintainer: Licheng Liu
 \examples{
 library(bpCausal)
 data(bpCausal)
-out <- pblasso(data = simdata, index = c("id", "time"), 
+out <- bpCausal(data = simdata, index = c("id", "time"), 
                Yname = "Y", Dname = "D", 
                Xname = c("X1", "X2"), Zname = NULL, Aname = c("X1", "X2"), 
                re = "time", r = 10, niter = 20000)
