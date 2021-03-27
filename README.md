@@ -68,10 +68,10 @@ We begin with the description of the model to illustrate the syntax of
 the function `bpCausal()`. `bpCausal()` can be implemented to estimate
 an linear model with the following (reduced) functional form:
 
-```math
+\\[
 y_{it} = \delta_{it} D_{it} + X_{it}^{\prime}\beta + Z_{it}^{\prime}\alpha_i 
 + A_{it}^{\prime}\Xi_t + \Gamma_i^{\prime}f_t + \varepsilon_{it}
-```
+\\]
 
 where $$D_{it}$$ is a binary treatment indicator and \(\delta_{it}\)
 represents heterogeneous treatment effect. \(X_{it}\), \(Z_{it}\) and
