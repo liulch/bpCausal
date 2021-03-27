@@ -304,7 +304,9 @@ variance for each factor loading. If the posterior is spiked at zero, we
 are confident that we can remove the corresponding factor. If the
 posterior is bimodal, we are confident that there is variation among
 factor loadings, so the corresponding factor should be included to
-control for unobserved heterogeneity.
+control for unobserved heterogeneity. The following figures indicate that 
+we need to include 2 factors in the model, which is consistent with the 
+true DGP.
 
 ``` r
 xlim = c(-10,10)
