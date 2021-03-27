@@ -68,10 +68,10 @@ We begin with the description of the model to illustrate the syntax of
 the function `bpCausal()`. `bpCausal()` can be implemented to estimate
 an linear model with the following (reduced) functional form:
 
-\[ y_{it} = \delta_{it} D_{it} + X_{it}^{\prime}\beta + Z_{it}^{\prime}\alpha_i 
-+ A_{it}^{\prime}\Xi_t + \Gamma_i^{\prime}f_t + \varepsilon_{it} \]
+$$y_{it} = \delta_{it} D_{it} + X_{it}^{\prime}\beta + Z_{it}^{\prime}\alpha_i 
++ A_{it}^{\prime}\Xi_t + \Gamma_i^{\prime}f_t + \varepsilon_{it}$$
 
-where \(D_{it}\) is a binary treatment indicator and \(\delta_{it}\)
+where $$D_{it}$$ is a binary treatment indicator and \(\delta_{it}\)
 represents heterogeneous treatment effect. \(X_{it}\), \(Z_{it}\) and
 \(A_{it}\) are vectors of covariates that have constant, unit-level
 random and time-level random effects on the outcome, respectively. The
@@ -140,157 +140,6 @@ out1 <- bpCausal(data = simdata, ## simulated dataset
                  c1 = 0.001, c2 = 0.001, ## parameters for hyper prior shrink on xi_t
                  p1 = 0.001, p2 = 0.001) ## parameters for hyper prior shrink on factor terms
 ```
-
-    ## Simulated times: 100
-    ## Simulated times: 200
-    ## Simulated times: 300
-    ## Simulated times: 400
-    ## Simulated times: 500
-    ## Simulated times: 600
-    ## Simulated times: 700
-    ## Simulated times: 800
-    ## Simulated times: 900
-    ## Simulated times: 1000
-    ## Simulated times: 1100
-    ## Simulated times: 1200
-    ## Simulated times: 1300
-    ## Simulated times: 1400
-    ## Simulated times: 1500
-    ## Simulated times: 1600
-    ## Simulated times: 1700
-    ## Simulated times: 1800
-    ## Simulated times: 1900
-    ## Simulated times: 2000
-    ## Simulated times: 2100
-    ## Simulated times: 2200
-    ## Simulated times: 2300
-    ## Simulated times: 2400
-    ## Simulated times: 2500
-    ## Simulated times: 2600
-    ## Simulated times: 2700
-    ## Simulated times: 2800
-    ## Simulated times: 2900
-    ## Simulated times: 3000
-    ## Simulated times: 3100
-    ## Simulated times: 3200
-    ## Simulated times: 3300
-    ## Simulated times: 3400
-    ## Simulated times: 3500
-    ## Simulated times: 3600
-    ## Simulated times: 3700
-    ## Simulated times: 3800
-    ## Simulated times: 3900
-    ## Simulated times: 4000
-    ## Simulated times: 4100
-    ## Simulated times: 4200
-    ## Simulated times: 4300
-    ## Simulated times: 4400
-    ## Simulated times: 4500
-    ## Simulated times: 4600
-    ## Simulated times: 4700
-    ## Simulated times: 4800
-    ## Simulated times: 4900
-    ## Simulated times: 5000
-    ## Simulated times: 5100
-    ## Simulated times: 5200
-    ## Simulated times: 5300
-    ## Simulated times: 5400
-    ## Simulated times: 5500
-    ## Simulated times: 5600
-    ## Simulated times: 5700
-    ## Simulated times: 5800
-    ## Simulated times: 5900
-    ## Simulated times: 6000
-    ## Simulated times: 6100
-    ## Simulated times: 6200
-    ## Simulated times: 6300
-    ## Simulated times: 6400
-    ## Simulated times: 6500
-    ## Simulated times: 6600
-    ## Simulated times: 6700
-    ## Simulated times: 6800
-    ## Simulated times: 6900
-    ## Simulated times: 7000
-    ## Simulated times: 7100
-    ## Simulated times: 7200
-    ## Simulated times: 7300
-    ## Simulated times: 7400
-    ## Simulated times: 7500
-    ## Simulated times: 7600
-    ## Simulated times: 7700
-    ## Simulated times: 7800
-    ## Simulated times: 7900
-    ## Simulated times: 8000
-    ## Simulated times: 8100
-    ## Simulated times: 8200
-    ## Simulated times: 8300
-    ## Simulated times: 8400
-    ## Simulated times: 8500
-    ## Simulated times: 8600
-    ## Simulated times: 8700
-    ## Simulated times: 8800
-    ## Simulated times: 8900
-    ## Simulated times: 9000
-    ## Simulated times: 9100
-    ## Simulated times: 9200
-    ## Simulated times: 9300
-    ## Simulated times: 9400
-    ## Simulated times: 9500
-    ## Simulated times: 9600
-    ## Simulated times: 9700
-    ## Simulated times: 9800
-    ## Simulated times: 9900
-    ## Simulated times: 10000
-    ## Simulated times: 10100
-    ## Simulated times: 10200
-    ## Simulated times: 10300
-    ## Simulated times: 10400
-    ## Simulated times: 10500
-    ## Simulated times: 10600
-    ## Simulated times: 10700
-    ## Simulated times: 10800
-    ## Simulated times: 10900
-    ## Simulated times: 11000
-    ## Simulated times: 11100
-    ## Simulated times: 11200
-    ## Simulated times: 11300
-    ## Simulated times: 11400
-    ## Simulated times: 11500
-    ## Simulated times: 11600
-    ## Simulated times: 11700
-    ## Simulated times: 11800
-    ## Simulated times: 11900
-    ## Simulated times: 12000
-    ## Simulated times: 12100
-    ## Simulated times: 12200
-    ## Simulated times: 12300
-    ## Simulated times: 12400
-    ## Simulated times: 12500
-    ## Simulated times: 12600
-    ## Simulated times: 12700
-    ## Simulated times: 12800
-    ## Simulated times: 12900
-    ## Simulated times: 13000
-    ## Simulated times: 13100
-    ## Simulated times: 13200
-    ## Simulated times: 13300
-    ## Simulated times: 13400
-    ## Simulated times: 13500
-    ## Simulated times: 13600
-    ## Simulated times: 13700
-    ## Simulated times: 13800
-    ## Simulated times: 13900
-    ## Simulated times: 14000
-    ## Simulated times: 14100
-    ## Simulated times: 14200
-    ## Simulated times: 14300
-    ## Simulated times: 14400
-    ## Simulated times: 14500
-    ## Simulated times: 14600
-    ## Simulated times: 14700
-    ## Simulated times: 14800
-    ## Simulated times: 14900
-    ## Simulated times: 15000
 
 The `bpCausal` package have two functions to summarize the posteriors.
 `coefSummary()` can be used to obtain summary statistics for posteriors
