@@ -72,7 +72,7 @@ an linear model with the following (reduced) functional form:
 y_{it} = \delta_{it} D_{it} + X_{it}^{\prime}\beta + Z_{it}^{\prime}\alpha_i + A_{it}^{\prime}\Xi_t + \Gamma_i^{\prime}f_t + \varepsilon_{it}
 ```
 
-where $$D_{it}$$ is a binary treatment indicator and \(\delta_{it}\)
+where $D_{it}$ is a binary treatment indicator and \\(\delta_{it}\\)
 represents heterogeneous treatment effect. \(X_{it}\), \(Z_{it}\) and
 \(A_{it}\) are vectors of covariates that have constant, unit-level
 random and time-level random effects on the outcome, respectively. The
