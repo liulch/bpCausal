@@ -17,7 +17,7 @@ plot_function <- function(x, y, treatment = 0,
   }
   
   x_range <- range(x)
-  if(x >= x_range[2] || x <= x_range[1]) {
+  if(x > x_range[2] || x < x_range[1]) {
     warning("The value of treatment must be in the range of x.")
   }
   
