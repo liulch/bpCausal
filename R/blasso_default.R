@@ -52,7 +52,7 @@ bpCausal <- function(data,
 	## raw data process 
 	id <- index[1]
 	time <- index[2]
-	time_range <- range(index[2])
+	time_range <- range(data$time)
 	
 	if (placebo_period != 0) {
 	  if ((placebo_period > time_range[2] - time_range[1])|| (placebo_period < 0)) {
