@@ -14,9 +14,9 @@ plot_att <- function(x, y, treatment = 0, eout, shadow = TRUE) {
        xlab = "Time", ylab = "Estimated ATT", cex.lab = 1.5)
   abline(v = treatment, lty = 3, col = "grey")
   
-  lines(x1, estimated_ATT)
-  lines(x1, estimated_ATT_ci_l, lty = 2)
-  lines(x1, estimated_ATT_ci_u, lty = 2)
+  lines(x1, estimated_ATT, col = "gray33")
+  lines(x1, estimated_ATT_ci_l, lty = 2, col = "darkgrey")
+  lines(x1, estimated_ATT_ci_u, lty = 2, col = "darkgrey")
   
   if (shadow == TRUE) {
     polygon(c(x1, rev(x1)), c(estimated_ATT_ci_l, rev(estimated_ATT_ci_u)), 
