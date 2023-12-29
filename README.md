@@ -294,7 +294,7 @@ the true values.
 
 ``` r
 x1 = c(-19:10)
-y1 <- apply(matrix(simdata[which(simdata$treat==1),"eff"], 30, 5), 1, mean)
+y1 <- apply(matrix(simdata[which(simdata$treat==1),"eff"], 30, 7), 1, mean)
 
 plot(x1, y1, type = "l", col = "red", ylim = c(-2, 12), 
     xlab = "Time", ylab = "ATT", cex.lab = 1.5)
@@ -305,6 +305,13 @@ lines(x1, eout1$est.eff$estimated_ATT_ci_u, lty = 2)
 ```
 
 ![](bpspatial_examples_files/figure-gfm/attp-1.png)<!-- -->
+
+Or just use `plot_att`.
+
+``` r
+plot_att(x = x1, y = y1, treatment = 0, eout = eout1, shadow = TRUE)  # treatment is at 0, CI area with shadow
+plot_att(x = x1, y = y1, treatment = 0, eout = eout1, shadow = FALSE) # treatment is at 0, CI area without shadow
+```
 
 Finally, we show the results for factor number selection. The following
 figures are the posterior distribution of the square root of prior
