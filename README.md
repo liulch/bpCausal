@@ -312,6 +312,7 @@ Or just use `plot_att`.
 plot_att(x = x1, y = y1, treatment = 0, eout = eout1, shadow = TRUE)  # treatment is at 0, CI area with shadow
 plot_att(x = x1, y = y1, treatment = 0, eout = eout1, shadow = FALSE) # treatment is at 0, CI area without shadow
 ```
+![shadow](bpspatial_examples_files/plot_att_with_shadow.png)<!-- -->![wo shadow](bpspatial_examples_files/plot_att_without_shadow.png)<!-- -->
 
 Finally, we show the results for factor number selection. The following
 figures are the posterior distribution of the square root of prior
