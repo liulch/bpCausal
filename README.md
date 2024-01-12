@@ -130,7 +130,8 @@ out1 <- bpCausal(data = simdata, ## simulated dataset
                  Aname = c("X1", "X2", "X3", "X4", "X5", "X6", "X7", "X8", "X9"), # covariates that have time-level random effect  
                  re = "both",   # two-way random effect: choose from ("unit", "time", "none", "both") 
                  ar1 = TRUE,    # whether the time-level random effects is ar1 process or jsut multilevel (independent)
-                 r = 10,        # factor numbers 
+                 r = 10,        # factor numbers
+                 placebo_period = 0,        # if 0, then it's not a placebo test
                  niter = 15000, # number of mcmc draws
                  burn = 5000,   # burn-in draws 
                  xlasso = 1,    ## whether to shrink constant coefs (1 = TRUE, 0 = FALSE)
@@ -142,6 +143,13 @@ out1 <- bpCausal(data = simdata, ## simulated dataset
                  c1 = 0.001, c2 = 0.001, ## parameters for hyper prior shrink on xi_t
                  p1 = 0.001, p2 = 0.001) ## parameters for hyper prior shrink on factor terms
 ```
+------------------------------------------------------------------------
+
+#### Placebo Test
+
+Change the value of `placebo_period` inside `bpCausal`, for instance, `placebo_period = 3`. Notice: The value should be positive and less than the range of `time`.
+
+------------------------------------------------------------------------
 
 The `bpCausal` package have two functions to summarize the posteriors.
 `coefSummary()` can be used to obtain summary statistics for posteriors
@@ -286,7 +294,7 @@ the true values.
 
 ``` r
 x1 = c(-19:10)
-y1 <- apply(matrix(simdata[which(simdata$treat==1),"eff"], 30, 5), 1, mean)
+y1 <- apply(matrix(simdata[which(simdata$treat==1),"eff"], 30, 7), 1, mean)
 
 plot(x1, y1, type = "l", col = "red", ylim = c(-2, 12), 
     xlab = "Time", ylab = "ATT", cex.lab = 1.5)
@@ -297,6 +305,14 @@ lines(x1, eout1$est.eff$estimated_ATT_ci_u, lty = 2)
 ```
 
 ![](bpspatial_examples_files/figure-gfm/attp-1.png)<!-- -->
+
+Or just use `plot_att`.
+
+``` r
+plot_att(x = x1, y = y1, treatment = 0, eout = eout1, shadow = TRUE)  # treatment is at 0, CI area with shadow
+plot_att(x = x1, y = y1, treatment = 0, eout = eout1, shadow = FALSE) # treatment is at 0, CI area without shadow
+```
+![shadow](bpspatial_examples_files/plot_att_with_shadow.png)<!-- -->![wo shadow](bpspatial_examples_files/plot_att_without_shadow.png)<!-- -->
 
 Finally, we show the results for factor number selection. The following
 figures are the posterior distribution of the square root of prior
